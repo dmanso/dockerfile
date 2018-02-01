@@ -1,0 +1,14 @@
+version: "2.2"
+services:
+  keepalived:
+    image: keepalived
+    read_only: true
+    tmpfs: /run
+    container_name: keepalived
+    hostname: keepalived
+    volumes:
+      - $(pwd)/config:/config:ro
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+    restart: always
