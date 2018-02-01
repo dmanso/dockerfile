@@ -6,6 +6,4 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y keepaliv
 RUN mkdir /config
 RUN rmdir /etc/keepalived && ln -s /config /etc/keepalived
 
-COPY entry.sh /
-RUN chmod 755 /entry.sh
-ENTRYPOINT ["/entry.sh", "--dont-fork", "--log-console"]
+ENTRYPOINT ["/usr/bin/keepalived", "--dont-fork", "--log-console"]
