@@ -6,4 +6,4 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y keepaliv
 RUN mkdir /config
 RUN rmdir /etc/keepalived && ln -s /config /etc/keepalived
 
-ENTRYPOINT ["/usr/bin/keepalived", "--dont-fork", "--log-console"]
+ENTRYPOINT ["/usr/sbin/keepalived", "--dont-fork", "--log-console"]
